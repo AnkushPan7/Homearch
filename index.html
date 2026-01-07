@@ -1,85 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homearch</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskbar Color Changer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .taskbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000; /* Ensure it's on top of other content */
+      box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    }
+
+    #colorPicker {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    /* Optional: Style the color picker input */
+    input[type="color"] {
+      -webkit-appearance: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    input[type="color"]::-webkit-color-swatch {
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <h3>Navigation</h3>
-            </div>
-            <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div class="sidebar-footer">
-                <p>&copy; 2024 Homearch</p>
-            </div>
-        </div>
-        <div class="content">
-            <header>
-                <h1>Welcome to Homearch</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Settings</a></li>
-                        <li><a href="#">Profile</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <main>
-                <section class="hero">
-                    <h2>Your Vision, Our Expertise</h2>
-                    <p>We provide innovative solutions for your architectural needs.</p>
-                    <button>Learn More</button>
-                </section>
-                <section class="featured-projects">
-                    <h3>Featured Projects</h3>
-                    <div class="project-grid">
-                        <div class="project-item">
-                            <img src="placeholder-image.jpg" alt="Project 1">
-                            <h4>Project Title 1</h4>
-                            <p>Brief description of the project.</p>
-                        </div>
-                        <div class="project-item">
-                            <img src="placeholder-image.jpg" alt="Project 2">
-                            <h4>Project Title 2</h4>
-                            <p>Brief description of the project.</p>
-                        </div>
-                        <div class="project-item">
-                            <img src="placeholder-image.jpg" alt="Project 3">
-                            <h4>Project Title 3</h4>
-                            <p>Brief description of the project.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="contact-form">
-                    <h3>Contact Us</h3>
-                    <form action="#" method="post">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
 
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+  <div class="taskbar" id="taskbar">
+    <span>Taskbar</span>
+    <input type="color" id="colorPicker" value="#333333" aria-label="Color Picker">
+  </div>
 
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+  <script>
+    const colorPicker = document.getElementById('colorPicker');
+    const taskbar = document.getElementById('taskbar');
 
-                        <button type="submit">Send Message</button>
-                    </form>
-                </section>
-            </main>
-            <footer>
-                <p>Contact us at: info@homearch.com</p>
-            </footer>
-        </div>
-    </div>
+    // Set initial background color
+    taskbar.style.backgroundColor = colorPicker.value;
+
+    colorPicker.addEventListener('input', function(event) {
+      taskbar.style.backgroundColor = event.target.value;
+    });
+
+    // Accessibility improvement: Handle keyboard input as well
+    colorPicker.addEventListener('change', function(event) {
+      taskbar.style.backgroundColor = event.target.value;
+    });
+  </script>
+
 </body>
 </html>
