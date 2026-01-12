@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const Content = ({ isOpen, children }) => {
+const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) => {
   const [contentWidth, setContentWidth] = useState('100%');
   const [buttonText, setButtonText] = useState('Click me');
 
@@ -17,7 +17,7 @@ const Content = ({ isOpen, children }) => {
     padding: '20px',
     boxSizing: 'border-box', // Include padding in width calculation
     minHeight: 'calc(100vh - 60px)', // Adjust based on header height (example: 60px)
-    backgroundColor: '#f0f0f0', // Example background color
+    backgroundColor: backgroundColor,
   };
 
   const buttonStyle = {
@@ -31,6 +31,7 @@ const Content = ({ isOpen, children }) => {
 
   const handleClick = () => {
     setButtonText('Click successfully!');
+    changeBackgroundColor('green');
   };
 
   return (
@@ -44,6 +45,8 @@ const Content = ({ isOpen, children }) => {
 Content.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  changeBackgroundColor: PropTypes.func.isRequired,
 };
 
 export default Content;
