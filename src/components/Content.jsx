@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Content = ({ isOpen, children }) => {
   const [contentWidth, setContentWidth] = useState('100%');
+  const [buttonText, setButtonText] = useState('Click me');
 
   useEffect(() => {
     // Adjust content width based on sidebar state
@@ -19,9 +20,23 @@ const Content = ({ isOpen, children }) => {
     backgroundColor: '#f0f0f0', // Example background color
   };
 
+  const buttonStyle = {
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  };
+
+  const handleClick = () => {
+    setButtonText('Click successfully!');
+  };
+
   return (
     <div style={contentStyle}>
       {children}
+      <button style={buttonStyle} onClick={handleClick}>{buttonText}</button>
     </div>
   );
 };
