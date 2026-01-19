@@ -3,7 +3,7 @@
 :root {
   --sidebar-width: 250px;
   --sidebar-collapsed-width: 60px;
-  --sidebar-background-color: #333;
+  --sidebar-background-color: green;
   --sidebar-text-color: #fff;
   --sidebar-hover-color: #555;
   --sidebar-active-color: #777;
