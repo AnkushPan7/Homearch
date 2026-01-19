@@ -38,6 +38,8 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
     <div style={contentStyle}>
       {children}
       <button style={buttonStyle} onClick={handleClick}>{buttonText}</button>
+      <hr />
+      ankush
     </div>
   );
 };
