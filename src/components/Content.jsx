@@ -29,6 +29,16 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
     cursor: 'pointer',
   };
 
+  const greenButtonStyle = {
+    backgroundColor: 'green',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    marginTop: '10px',
+  };
+
   const handleClick = () => {
     setButtonText('Click successfully!');
     changeBackgroundColor('green');
@@ -38,6 +48,7 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
     <div style={contentStyle}>
       {children}
       <button style={buttonStyle} onClick={handleClick}>{buttonText}</button>
+      <button style={greenButtonStyle}>hello</button>
     </div>
   );
 };
