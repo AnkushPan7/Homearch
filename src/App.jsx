@@ -16,8 +16,8 @@ const App = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
   };
 
-  const changeBackgroundColor = (color) => {
-    setBackgroundColor(color);
+  const changeBackgroundColorToRed = () => {
+    setBackgroundColor('red');
   };
 
   return (
@@ -28,7 +28,7 @@ const App = () => {
         toggleSidebar={toggleSidebar}
         collapseSidebar={collapseSidebar}
       />
-      <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColor} />
+      <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColorToRed} />
     </div>
   );
 };
