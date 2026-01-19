@@ -36,6 +36,7 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
 
   return (
     <div style={contentStyle}>
+      <b>hello</b>
       {children}
       <button style={buttonStyle} onClick={handleClick}>{buttonText}</button>
     </div>
