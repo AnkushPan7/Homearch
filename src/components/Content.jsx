@@ -13,7 +13,7 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
   const contentStyle = {
     marginLeft: isOpen ? '250px' : '0', // Push content to the right when sidebar is open
     width: contentWidth,
-    transition: 'margin-left 0.3s ease, width 0.3s ease', // Smooth transition for responsiveness
+    transition: 'margin-left 0.3s ease, width 0.3s ease, background-color 0.3s ease', // Smooth transition for responsiveness
     padding: '20px',
     boxSizing: 'border-box', // Include padding in width calculation
     minHeight: 'calc(100vh - 60px)', // Adjust based on header height (example: 60px)
