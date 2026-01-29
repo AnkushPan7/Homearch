@@ -30,8 +30,8 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
   };
 
   const handleClick = () => {
-    setButtonText('Click successfully!');
-    changeBackgroundColor('green');
+    setButtonText('Clicked!');
+    changeBackgroundColor('lightblue');
   };
 
   return (
