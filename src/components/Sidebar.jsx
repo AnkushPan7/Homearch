@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sidebar.css'; // Import the CSS file for styling
+import './Sidebar.css';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,7 +14,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
+    <div 
+      className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}
+      style={{ backgroundColor: 'green', transition: 'width 0.3s ease-in-out' }}
+    >
       <div className="sidebar-header">
         <button onClick={toggleSidebar} className="toggle-button">
           {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}
@@ -27,7 +30,7 @@ const Sidebar = () => {
       </div>
 
       {isOpen && (
-        <div className="sidebar-content">
+        <div className="sidebar-content" style={{ transition: 'opacity 0.3s ease-in-out' }}>
           <ul>
             <li>
               <a href="#">Item 1</a>
