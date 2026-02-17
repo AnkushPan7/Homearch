@@ -14,6 +14,8 @@ const SidebarContainer = styled.div`
   overflow: hidden;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SidebarHeader = styled.div`
@@ -22,12 +24,15 @@ const SidebarHeader = styled.div`
   font-weight: bold;
   font-size: 1.2em;
   border-bottom: 1px solid #ddd;
+  flex-shrink: 0;
 `;
 
 const SidebarMenu = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
 `;
 
 const SidebarMenuItem = styled.li`
