@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
+import HellouserappunikButton from './components/HellouserappunikButton';
 import './App.css'; // Import the CSS file for styling
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         collapseSidebar={collapseSidebar}
       />
       <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColor} />
+      <HellouserappunikButton />
     </div>
   );
 };
