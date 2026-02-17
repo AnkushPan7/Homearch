@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // Styled Components for the Sidebar
 const SidebarContainer = styled.div`
   width: ${props => (props.collapsed ? '50px' : '250px')};
-  background-color: #f0f0f0;
+  background-color: green; /* Changed to green color */
   height: 100vh;
   position: fixed;
   top: 0;

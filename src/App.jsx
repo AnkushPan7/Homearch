@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
-import './App.css'; // Import the CSS file for styling
+import './App.css';
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -21,14 +21,20 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container" style={{ backgroundColor: backgroundColor }}>
       <Sidebar
         isOpen={isSidebarOpen}
         isCollapsed={isSidebarCollapsed}
         toggleSidebar={toggleSidebar}
         collapseSidebar={collapseSidebar}
+        style={{ backgroundColor: 'green' }}
       />
-      <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColor} />
+      <Content 
+        isOpen={isSidebarOpen} 
+        isCollapsed={isSidebarCollapsed} 
+        backgroundColor={backgroundColor} 
+        changeBackgroundColor={changeBackgroundColor} 
+      />
     </div>
   );
 };
