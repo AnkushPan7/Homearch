@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css'; // Import the CSS file for styling
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
+const Sidebar = ({ isOpen, isCollapsed, toggleSidebar, collapseSidebar }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
@@ -20,7 +9,7 @@ const Sidebar = () => {
           {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}
         </button>
         {isOpen && (
-          <button onClick={toggleCollapse} className="collapse-button">
+          <button onClick={collapseSidebar} className="collapse-button">
             {isCollapsed ? '>' : '<'}
           </button>
         )}
