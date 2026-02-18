@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sidebar.css'; // Import the CSS file for styling
+import './Sidebar.css'; 
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,7 +14,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
+    <div 
+      className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}
+      style={{ backgroundColor: 'white', padding: '20px', width: '250px' }}
+    >
       <div className="sidebar-header">
         <button onClick={toggleSidebar} className="toggle-button">
           {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}
