@@ -14,35 +14,35 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
-      <div className="sidebar-header">
-        <button onClick={toggleSidebar} className="toggle-button">
+    <div className={`sidebar-dark ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
+      <div className="sidebar-header-dark">
+        <button onClick={toggleSidebar} className="toggle-button-dark">
           {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}
         </button>
         {isOpen && (
-          <button onClick={toggleCollapse} className="collapse-button">
+          <button onClick={toggleCollapse} className="collapse-button-dark">
             {isCollapsed ? '>' : '<'}
           </button>
         )}
       </div>
 
       {isOpen && (
-        <div className="sidebar-content">
+        <div className="sidebar-content-dark">
           <ul>
             <li>
-              <a href="#">Item 1</a>
+              <a href="#" className="sidebar-link-dark">Item 1</a>
             </li>
             <li>
-              <a href="#">Item 2</a>
+              <a href="#" className="sidebar-link-dark">Item 2</a>
             </li>
             <li>
-              <a href="#">Item 3</a>
+              <a href="#" className="sidebar-link-dark">Item 3</a>
             </li>
             <li>
-              <a href="#">Item 4</a>
+              <a href="#" className="sidebar-link-dark">Item 4</a>
             </li>
             <li>
-              <a href="#">Item 5</a>
+              <a href="#" className="sidebar-link-dark">Item 5</a>
             </li>
           </ul>
         </div>

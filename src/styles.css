@@ -3,13 +3,16 @@
 :root {
   --sidebar-width: 250px;
   --sidebar-collapsed-width: 60px;
-  --sidebar-background-color: green;
+  --sidebar-background-color: #333; /* Darkish background color */
   --sidebar-text-color: #fff;
   --sidebar-hover-color: #555;
   --sidebar-active-color: #777;
-  --content-background-color: #fff;
+  --content-background-color: #f0f0f0; /* Light background for content */
   --content-text-color: #333;
   --transition-duration: 0.3s;
+  --primary-color: #333; /* Primary color for darkish theme */
+  --darkish-background: #2f2f2f; /* Darkish background color */
+  --darkish-text-color: #ddd; /* Light text color for darkish theme */
 }
 
 body {
@@ -34,6 +37,7 @@ body {
   flex-direction: column;
   height: 100%; /* Full height */
   position: relative; /* For toggle button positioning */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
 .sidebar.collapsed {
@@ -51,6 +55,8 @@ body {
   text-align: center;
   font-size: 1.2em;
   font-weight: bold;
+  color: var(--darkish-text-color); /* Use light text color for darkish theme */
+  background-color: var(--darkish-background); /* Darkish background for header */
 }
 
 .sidebar-menu {
@@ -64,6 +70,7 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color var(--transition-duration) ease;
+  color: var(--darkish-text-color); /* Light text color for menu items */
 }
 
 .sidebar-menu-item:hover {
@@ -75,7 +82,7 @@ body {
 }
 
 .sidebar-menu-item a {
-  color: var(--sidebar-text-color);
+  color: var(--darkish-text-color); /* Light text color for links */
   text-decoration: none;
   display: block; /* Make the entire area clickable */
 }
@@ -102,6 +109,8 @@ body {
   padding: 20px;
   overflow: auto; /* Enable scrolling within content area */
   transition: margin-left var(--transition-duration) ease;
+  background-color: var(--content-background-color); /* Light background for content */
+  color: var(--content-text-color); /* Dark text color for content */
 }
 
 .content.sidebar-hidden {
@@ -110,6 +119,7 @@ body {
 
 .content-header {
   margin-bottom: 20px;
+  color: var(--darkish-text-color); /* Light text color for content header */
 }
 
 .hide-sidebar-button {
