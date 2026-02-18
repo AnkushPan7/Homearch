@@ -14,7 +14,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
+    <div 
+      className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}
+      style={{ backgroundColor: isCollapsed ? 'green' : 'inherit' }}
+    >
       <div className="sidebar-header">
         <button onClick={toggleSidebar} className="toggle-button">
           {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}

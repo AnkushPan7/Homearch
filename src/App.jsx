@@ -6,7 +6,7 @@ import './App.css'; // Import the CSS file for styling
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState('white');
+  const [backgroundColor, setBackgroundColor] = useState('green'); // Initialize background color to green
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -21,12 +21,13 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container" style={{ backgroundColor: backgroundColor }}>
       <Sidebar
         isOpen={isSidebarOpen}
         isCollapsed={isSidebarCollapsed}
         toggleSidebar={toggleSidebar}
         collapseSidebar={collapseSidebar}
+        backgroundColor={backgroundColor} // Pass background color to Sidebar
       />
       <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColor} />
     </div>

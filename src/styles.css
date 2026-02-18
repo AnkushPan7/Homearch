@@ -38,6 +38,7 @@ body {
 
 .sidebar.collapsed {
   width: var(--sidebar-collapsed-width);
+  background-color: var(--sidebar-background-color);
 }
 
 .sidebar.hidden {
