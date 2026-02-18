@@ -27,6 +27,7 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
+    margin: '5px',
   };
 
   const handleClick = () => {
@@ -34,10 +35,15 @@ const Content = ({ isOpen, children, backgroundColor, changeBackgroundColor }) =
     changeBackgroundColor('green');
   };
 
+  const handleHelloClick = () => {
+    console.log('Hello button clicked');
+  };
+
   return (
     <div style={contentStyle}>
       {children}
       <button style={buttonStyle} onClick={handleClick}>{buttonText}</button>
+      <button style={buttonStyle} onClick={handleHelloClick}>hello</button>
     </div>
   );
 };
