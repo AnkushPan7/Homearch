@@ -1,52 +1,33 @@
-import React, { useState } from 'react';
-import './Sidebar.css'; // Import the CSS file for styling
+import React from 'react';
+import './Sidebar.css';
 
+/**
+ * Sidebar component
+ * 
+ * @description A React functional component representing the sidebar.
+ * @returns {JSX.Element} The Sidebar component.
+ */
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  // Define the sidebar items
+  const sidebarItems = [
+    { id: 1, label: 'Item 1', href: '#' },
+    { id: 2, label: 'Item 2', href: '#' },
+    { id: 3, label: 'Item 3', href: '#' },
+  ];
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
+  // Render the sidebar
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
-      <div className="sidebar-header">
-        <button onClick={toggleSidebar} className="toggle-button">
-          {isOpen ? (isCollapsed ? 'Expand' : 'Hide') : 'Show'}
-        </button>
-        {isOpen && (
-          <button onClick={toggleCollapse} className="collapse-button">
-            {isCollapsed ? '>' : '<'}
-          </button>
-        )}
-      </div>
-
-      {isOpen && (
-        <div className="sidebar-content">
-          <ul>
-            <li>
-              <a href="#">Item 1</a>
-            </li>
-            <li>
-              <a href="#">Item 2</a>
-            </li>
-            <li>
-              <a href="#">Item 3</a>
-            </li>
-            <li>
-              <a href="#">Item 4</a>
-            </li>
-            <li>
-              <a href="#">Item 5</a>
-            </li>
-          </ul>
-        </div>
-      )}
+    <div className="sidebar" aria-label="Sidebar navigation">
+      <h2 className="sidebar-title">Sidebar</h2>
+      <ul className="sidebar-list">
+        {sidebarItems.map((item) => (
+          <li key={item.id} className="sidebar-item">
+            <a href={item.href} className="sidebar-link">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

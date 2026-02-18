@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
+import Home from './pages/Home';
 import Content from './components/Content';
-import './App.css'; // Import the CSS file for styling
+import './App.css';
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -21,15 +23,38 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
+    <BrowserRouter>
       <Sidebar
         isOpen={isSidebarOpen}
         isCollapsed={isSidebarCollapsed}
         toggleSidebar={toggleSidebar}
         collapseSidebar={collapseSidebar}
       />
-      <Content isOpen={isSidebarOpen} isCollapsed={isSidebarCollapsed} backgroundColor={backgroundColor} changeBackgroundColor={changeBackgroundColor} />
-    </div>
+      <Routes>
+        <Route 
+          path='/' 
+          element={
+            <Content 
+              isOpen={isSidebarOpen} 
+              isCollapsed={isSidebarCollapsed} 
+              backgroundColor={backgroundColor} 
+              changeBackgroundColor={changeBackgroundColor} 
+            />
+          } 
+        />
+        <Route 
+          path='/home' 
+          element={
+            <Content 
+              isOpen={isSidebarOpen} 
+              isCollapsed={isSidebarCollapsed} 
+              backgroundColor={backgroundColor} 
+              changeBackgroundColor={changeBackgroundColor} 
+            />
+          } 
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
